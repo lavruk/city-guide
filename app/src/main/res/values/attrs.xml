@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MultiSwitch">
+        <attr name="textSize" format="dimension" />
+        <attr name="selectedColor" format="color" />
+        <attr name="normalColor" format="color" />
+        <attr name="slider" format="reference" />
+        <attr name="tray" format="reference" />
+        <attr name="states" format="reference" />
+    </declare-styleable>
+</resources>

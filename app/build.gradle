@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.lavruk.cityguide"
+        minSdkVersion 15
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:21.+'
+    compile 'com.android.support:support-v13:21.+'
+
+    // play-services
+    compile 'com.google.android.gms:play-services-maps:6.5.+'
+    compile 'com.google.android.gms:play-services-location:6.5.+'
+
+    // views injection
+    compile 'com.jakewharton:butterknife:5.1.+'
+
+    // ok-http
+    compile 'com.squareup.okhttp:okhttp:2.0.+'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.+'
+
+    // volley
+    compile 'com.mcxiaoke.volley:library:1.0.+'
+
+    // json
+    compile 'com.google.code.gson:gson:2.2.+'
+
+    // dependency injection
+    compile 'com.squareup.dagger:dagger:1.2.1'
+    provided 'com.squareup.dagger:dagger-compiler:1.2.1'
+
+    // https://github.com/greenrobot/EventBus
+    compile 'de.greenrobot:eventbus:2.4.0'
+
+    // https://github.com/mg6maciej/hrisey
+    provided 'pl.mg6.hrisey:hrisey:0.3.+'
+
+    // logging
+    compile 'com.jakewharton.timber:timber:2.5.1'
+}
