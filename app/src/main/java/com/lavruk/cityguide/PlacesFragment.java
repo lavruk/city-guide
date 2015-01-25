@@ -113,9 +113,11 @@ public class PlacesFragment extends Fragment implements OnRefreshListener, OnSta
 
     @Override public void onStateChanged(int state) {
         PlaceType placeType = PlaceType.values()[state];
-        mPlacesAdapter.onNewPlaceType(placeType);
-        mPlaceType = placeType;
-        reloadPlaces();
+        if(!mPlaceType.equals(placeType)) {
+            mPlacesAdapter.onNewPlaceType(placeType);
+            mPlaceType = placeType;
+            reloadPlaces();
+        }
     }
 
     @Override public void onLocationChanged(Location location, long time) {
